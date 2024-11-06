@@ -1,4 +1,4 @@
-package org.example.txnprocessor;
+package org.example.txnprocessor.frauddetection;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.api.common.functions.OpenContext;
@@ -48,8 +48,9 @@ public class FraudDetector extends KeyedProcessFunction<Long, Transaction, Alert
                 Alert alert = new Alert();
                 alert.setId(transaction.getAccountId());
                 alert.setDetails("second txn. " + transaction + " previous txn. " + previousTransaction);
-
+                alert.setTs(context.timerService().currentProcessingTime());
                 collector.collect(alert);
+                log.info("raised alert {}", alert);
             }
         }
         txnState.update(transaction);

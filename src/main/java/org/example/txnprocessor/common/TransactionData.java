@@ -18,6 +18,20 @@ public class TransactionData {
             new Transaction(88845, 11, 0.11, "GB"),
             new Transaction(88845, 12, 0.99, "GB"),
             new Transaction(99901, 13, 642.4, "GB"),
-            new Transaction(88845, 14, 625.0, "GB")
+            new Transaction(88845, 14, 625.0, "GB"),
+            new Transaction(66553, 1, 124.5, "GR"),
+            new Transaction(66553, 2, 99.25, "GB"),
+            new Transaction(66553, 3, 0.155, "GB"),
+            new Transaction(66553, 4, 48.1, "DE"),
+            new Transaction(66553, 5, 1024.0, "GB"),
+            new Transaction(55544, 6, 0.48, "GB"),
+            new Transaction(66553, 7, 120.0, "CH"),
+            new Transaction(55544, 8, 678.45, "GB"),
+            new Transaction(66553, 9, 502.23, "GB"),
+            new Transaction(55544, 10, 56.78, "GB"),
+            new Transaction(66553, 11, 0.11, "GB"),
+            new Transaction(66553, 12, 0.99, "GB"),
+            new Transaction(55544, 13, 642.4, "GB"),
+            new Transaction(66553, 14, 625.0, "FR")
     );
 }

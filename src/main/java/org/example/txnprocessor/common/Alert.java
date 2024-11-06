@@ -11,9 +11,10 @@ import lombok.NoArgsConstructor;
 public final class Alert {
 
     private long id;
+    private long ts;
     private String details;
 
     public String toString() {
-        return "Alert{id=" + this.id + " details=" + this.details + "}";
+        return "Alert[id=" + id + " timestamp=" + ts + " details=" + details + "]";
     }
 }

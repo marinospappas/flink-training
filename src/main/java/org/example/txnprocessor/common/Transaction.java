@@ -8,6 +8,8 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import java.time.Instant;
 import java.util.List;
 
+import static org.example.txnprocessor.common.Utils.milliToString;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,13 +20,13 @@ public class Transaction {
     private String country;
 
     public String toString() {
-        return "Transaction{accountId=" + accountId + ", timestamp=" + timestamp + ", amount=" + amount + ", country " + country + '}';
+        return "Transaction[accountId=" + accountId + ", timestamp=" + milliToString(timestamp) + ", amount=" + amount + ", country " + country + "]";
     }
 
     public static Transaction random() {
         List<String> countries = List.of("GB", "US", "CH", "GR", "DE");
         RandomDataGenerator randomDataGenerator = new RandomDataGenerator();
-        return new Transaction(randomDataGenerator.nextLong(1, 1000), Instant.now().getEpochSecond(),
+        return new Transaction(randomDataGenerator.nextLong(1, 1000), Instant.now().toEpochMilli(),
                 randomDataGenerator.nextUniform(0.01, 1000.0), countries.get(randomDataGenerator.nextInt(0, countries.size()) - 1));
     }
 
